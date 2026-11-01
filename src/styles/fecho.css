@@ -9,7 +9,7 @@
   color: var(--cafe);
 }
 .fecho:focus { outline: none; }
-.fecho__in { padding: 56px 0 72px; }
+.fecho__in { padding: 56px 0 clamp(72px, 9vw, 128px); }
 
 .fecho__titulo {
   margin-top: 22px;
@@ -53,21 +53,6 @@
   transition: color 0.2s;
 }
 .contato a:hover { color: var(--terra); }
-
-.rodape {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 10px 28px;
-  padding: 22px 0 28px;
-  border-top: 1px solid var(--champ);
-  font-family: var(--f-mono);
-  font-size: 12px;
-  letter-spacing: 0.03em;
-}
-.rodape__corretora { font-weight: 700; }
-.rodape__eho { display: inline-flex; align-items: center; gap: 8px; }
-.eho { width: 22px; height: 22px; }
 
 @media (max-width: 760px) {
   .dados { grid-template-columns: repeat(2, 1fr); }

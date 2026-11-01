@@ -104,10 +104,10 @@ button { font: inherit; color: inherit; background: none; border: 0; padding: 0;
 }
 
 /* troca de idioma: fade de 200 ms só nos textos */
-[data-t], [data-serv] { transition: opacity 0.2s ease; }
-.is-trocando [data-t], .is-trocando [data-serv] { opacity: 0; }
+[data-t], [data-d] { transition: opacity 0.2s ease; }
+.is-trocando [data-t], .is-trocando [data-d] { opacity: 0; }
 
 @media (prefers-reduced-motion: reduce) {
   .grao { animation: none; }
-  [data-t], [data-serv] { transition: none; }
+  [data-t], [data-d] { transition: none; }
 }

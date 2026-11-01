@@ -19,7 +19,7 @@
   transition: transform 0.45s cubic-bezier(0.3, 0.7, 0.2, 1), background-color 0.35s;
 }
 .nav.is-escondida:not(:focus-within) { transform: translate(-50%, calc(-100% - var(--nav-top) - 8px)); }
-.nav.is-cheia { background: var(--cafe); }
+.nav.is-cheia { background: var(--cafe); box-shadow: 0 0 0 1px rgba(196, 170, 143, 0.35); }
 
 .nav__links { display: flex; gap: 22px; }
 .nav__links a {

@@ -1,0 +1,445 @@
+/* ================= SEÇÕES DO SITE COMPLETO ================= */
+.secao {
+  position: relative;
+  z-index: 3;
+  padding: clamp(88px, 11vw, 168px) var(--gutter);
+  background: var(--off);
+  color: var(--cafe);
+}
+.secao:focus { outline: none; }
+/* areia: entra e sai em degradê, sem linha reta */
+.secao--areia {
+  background: linear-gradient(to bottom, var(--off) 0, var(--areia) 140px, var(--areia) calc(100% - 140px), var(--off) 100%);
+}
+.secao--cafe { background: var(--cafe); color: var(--off); }
+.secao--cafe .rotulo { color: var(--champ); opacity: 1; }
+
+.secao__topo {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+  align-items: end;
+  gap: 24px 48px;
+  margin-bottom: clamp(44px, 6vw, 84px);
+}
+.secao__titulo,
+.fecho__titulo {
+  margin-top: 22px;
+  font-family: var(--f-nome);
+  font-variation-settings: var(--nome-eixos);
+  font-weight: 420;
+  font-size: clamp(2rem, 4.4vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+.secao__intro {
+  font-size: 17px;
+  line-height: 1.55;
+  max-width: 38ch;
+  opacity: 0.86;
+}
+
+/* ---------- como funciona ---------- */
+.como__cab {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 30rem);
+  align-items: end;
+  gap: 24px 48px;
+}
+.passos {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 28px;
+  margin: clamp(48px, 6vw, 88px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.passo { padding-top: 18px; border-top: 1px solid var(--champ); }
+.passo__n { font-family: var(--f-mono); font-size: 12px; letter-spacing: 0.08em; color: var(--dourado); }
+.passo__titulo {
+  margin: 14px 0 10px;
+  font-family: var(--f-nome);
+  font-variation-settings: var(--nome-eixos);
+  font-weight: 440;
+  font-size: 26px;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.passo__texto { font-size: 15px; line-height: 1.5; opacity: 0.86; }
+
+/* ---------- bairros ---------- */
+.bairros {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 3vw, 44px) clamp(20px, 2.2vw, 32px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.bairro__link { display: block; text-decoration: none; color: inherit; }
+.bairro__midia {
+  position: relative;
+  display: block;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 4px;
+  background: var(--areia);
+}
+.bairro__midia img,
+.bairro__provisorio {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1.2s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.bairro__link:hover .bairro__midia img,
+.bairro__link:hover .bairro__provisorio { transform: scale(1.04); }
+.bairro__provisorio {
+  display: flex;
+  align-items: flex-end;
+  padding: 18px;
+  background:
+    radial-gradient(ellipse 70% 40% at 70% 18%, rgba(255, 248, 236, 0.45), rgba(255, 248, 236, 0) 70%),
+    repeating-linear-gradient(172deg, rgba(255, 255, 255, 0) 0 22px, rgba(255, 255, 255, 0.07) 22px 23px),
+    linear-gradient(165deg, var(--c1), var(--c2));
+}
+.bairro__provisorio span {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--off);
+  opacity: 0.85;
+}
+.bairro__base {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 18px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid var(--champ);
+}
+.bairro__nome {
+  font-family: var(--f-nome);
+  font-variation-settings: var(--nome-eixos);
+  font-weight: 440;
+  font-size: clamp(22px, 2vw, 28px);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+.bairro__ver {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 0 0 auto;
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
+  color: var(--terra);
+}
+.bairro__ver svg { width: 14px; height: 14px; transition: transform 0.4s; }
+.bairro__link:hover .bairro__ver svg { transform: translateX(3px); }
+.bairro__texto { margin-top: 12px; font-size: 15px; line-height: 1.5; opacity: 0.86; max-width: 40ch; }
+
+/* ---------- busca de imóveis ---------- */
+.busca { max-width: 1040px; }
+.busca__tipo {
+  display: inline-flex;
+  padding: 4px;
+  border: 1px solid var(--champ);
+  border-radius: 999px;
+}
+.busca__tipo label { position: relative; cursor: pointer; }
+.busca__tipo input { position: absolute; opacity: 0; inset: 0; cursor: pointer; }
+.busca__tipo span {
+  display: block;
+  padding: 9px 20px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background-color 0.25s, color 0.25s;
+}
+.busca__tipo input:checked + span { background: var(--cafe); color: var(--off); }
+.busca__tipo input:focus-visible + span { outline: 2px solid var(--dourado); outline-offset: 2px; }
+.busca__campo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 16px;
+  padding: 7px 7px 7px 28px;
+  background: #fbf8f3;
+  border: 1px solid var(--champ);
+  border-radius: 999px;
+  box-shadow: 0 18px 50px rgba(var(--cafe-rgb), 0.08);
+}
+.busca__campo:focus-within { border-color: var(--dourado); }
+.busca__campo input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  background: transparent;
+  font: inherit;
+  font-size: 18px;
+  color: var(--cafe);
+  padding: 12px 0;
+}
+.busca__campo input::placeholder { color: rgba(var(--cafe-rgb), 0.5); }
+.busca__campo input:focus { outline: none; }
+.busca__campo input::-webkit-search-cancel-button { display: none; }
+.busca__atalhos { display: flex; align-items: center; flex-wrap: wrap; gap: 10px 16px; margin-top: 22px; }
+.busca__atalhos ul { display: flex; flex-wrap: wrap; gap: 8px; }
+.chip {
+  padding: 8px 14px;
+  border: 1px solid var(--champ);
+  border-radius: 999px;
+  font-size: 13.5px;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.chip:hover { background: rgba(196, 170, 143, 0.18); border-color: var(--terra); }
+.busca__nota { margin-top: 18px; font-size: 14px; opacity: 0.72; }
+
+.destaques { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin: 64px 0 0; padding: 0; list-style: none; }
+.casa a { display: block; text-decoration: none; }
+.casa__midia { display: block; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 4px; }
+.casa__midia img { width: 100%; height: 100%; object-fit: cover; }
+.casa__preco { display: block; margin-top: 14px; font-family: var(--f-mono); font-size: 13px; color: var(--terra); }
+.casa__titulo { margin-top: 6px; font-family: var(--f-nome); font-weight: 440; font-size: 22px; }
+.casa__local { font-size: 14px; opacity: 0.75; }
+
+/* ---------- investir ---------- */
+.caminhos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(28px, 3vw, 48px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.caminho { padding-top: 26px; border-top: 1px solid var(--champ); }
+.caminho__icone { width: 40px; height: 40px; color: var(--dourado); }
+.caminho__titulo {
+  margin: 22px 0 12px;
+  font-family: var(--f-nome);
+  font-variation-settings: var(--nome-eixos);
+  font-weight: 440;
+  font-size: clamp(26px, 2.4vw, 34px);
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+.caminho__texto { font-size: 16px; line-height: 1.55; opacity: 0.86; max-width: 36ch; }
+.depois {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 14px 40px;
+  margin-top: clamp(56px, 7vw, 96px);
+  padding: 22px 0;
+  border-top: 1px solid var(--champ);
+  border-bottom: 1px solid var(--champ);
+}
+.depois__titulo { font-family: var(--f-mono); font-weight: 400; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.7; }
+.depois__lista { display: flex; flex-wrap: wrap; gap: 8px 0; }
+.depois__lista li { font-size: 16px; }
+.depois__lista li + li::before { content: '·'; margin: 0 16px; color: var(--dourado); }
+
+/* ---------- sobre (café) ---------- */
+.sobre__grade {
+  display: grid;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+  gap: clamp(36px, 6vw, 96px);
+  align-items: center;
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.sobre__foto { margin: 0; aspect-ratio: 4 / 5; overflow: hidden; border-radius: 4px; }
+.sobre__foto img { width: 100%; height: 100%; object-fit: cover; }
+.sobre__provisorio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  height: 100%;
+  border: 1px solid rgba(196, 170, 143, 0.5);
+  border-radius: 4px;
+  background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(184, 150, 62, 0.14), rgba(184, 150, 62, 0) 70%);
+}
+.sobre__mono {
+  font-family: var(--f-nome);
+  font-variation-settings: var(--nome-eixos);
+  font-weight: 380;
+  font-size: clamp(90px, 12vw, 170px);
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: var(--dourado);
+}
+.sobre__nome {
+  margin-top: 22px;
+  font-family: var(--f-nome);
+  font-variation-settings: var(--nome-eixos);
+  font-weight: 420;
+  font-size: clamp(2.6rem, 5.4vw, 5.4rem);
+  letter-spacing: -0.04em;
+  line-height: 0.95;
+}
+.sobre__nome em { font-style: italic; font-weight: 360; }
+.sobre__sol { display: inline-block; width: 0.26em; height: 0.26em; margin-left: 0.06em; vertical-align: top; color: var(--dourado); }
+.sobre__sol svg { width: 100%; height: 100%; }
+.sobre__sub { margin: 18px 0 30px; font-family: var(--f-mono); font-size: 11.5px; letter-spacing: 0.2em; color: var(--champ); }
+.sobre__texto > p[data-t^='sobreP'] { max-width: 52ch; font-size: 17px; line-height: 1.62; opacity: 0.92; }
+.sobre__texto > p[data-t^='sobreP'] + p[data-t^='sobreP'] { margin-top: 16px; }
+.sobre__dados {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, auto));
+  justify-content: start;
+  gap: 18px 44px;
+  margin: 34px 0;
+  padding-top: 24px;
+  border-top: 1px solid rgba(196, 170, 143, 0.4);
+}
+.sobre__dados dt { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase; color: var(--champ); }
+.sobre__dados dd { margin-top: 8px; font-size: 16px; }
+.sobre__dados a { text-decoration: underline; text-decoration-color: rgba(196, 170, 143, 0.6); text-underline-offset: 4px; }
+.sobre__dados a:hover { color: #f2c7a9; }
+
+/* ---------- depoimentos ---------- */
+.depoimentos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px; margin: 0; padding: 0; list-style: none; }
+.depoimento blockquote { margin: 0; font-family: var(--f-nome); font-weight: 380; font-size: 22px; line-height: 1.35; }
+.depoimento__quem { margin-top: 18px; font-family: var(--f-mono); font-size: 12px; }
+.depoimento__quem span { margin-left: 10px; opacity: 0.65; }
+
+/* ---------- contato ---------- */
+.contato-secao { padding-bottom: clamp(72px, 9vw, 120px); }
+.contato-secao .secao__topo { margin-bottom: 40px; }
+
+/* ---------- rodapé (café) ---------- */
+.rodape {
+  position: relative;
+  z-index: 3;
+  padding: clamp(48px, 6vw, 72px) var(--gutter) 28px;
+  background: var(--cafe);
+  color: var(--off);
+}
+.rodape__topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+  padding-bottom: 32px;
+}
+.rodape__marca {
+  font-family: var(--f-nome);
+  font-variation-settings: var(--nome-eixos);
+  font-weight: 420;
+  font-size: 34px;
+  letter-spacing: -0.035em;
+}
+.rodape__marca em { font-style: italic; font-weight: 360; }
+.rodape__links { display: flex; flex-wrap: wrap; gap: 10px 26px; }
+.rodape__links a {
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none;
+  opacity: 0.85;
+}
+.rodape__links a:hover { opacity: 1; color: #f2c7a9; }
+.rodape__legal {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 28px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(196, 170, 143, 0.35);
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+  opacity: 0.85;
+}
+.rodape__corretora { font-weight: 700; }
+.rodape__eho { display: inline-flex; align-items: center; gap: 8px; }
+.eho { width: 22px; height: 22px; }
+
+/* ---------- WhatsApp flutuante ---------- */
+.whats {
+  position: fixed;
+  z-index: 60;
+  right: 20px;
+  bottom: 20px;
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--terra);
+  color: var(--off);
+  box-shadow: 0 10px 30px rgba(var(--cafe-rgb), 0.3);
+  opacity: 0;
+  transform: translateY(16px);
+  pointer-events: none;
+  transition: opacity 0.4s, transform 0.4s, background-color 0.2s;
+}
+.whats svg { width: 26px; height: 26px; }
+.whats:hover { background: #8f4c31; }
+.whats.is-visivel { opacity: 1; transform: none; pointer-events: auto; }
+
+/* ---------- revelar ao rolar ---------- */
+.revela-on [data-revela] {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.9s ease, transform 1s cubic-bezier(0.2, 0.7, 0.2, 1);
+  transition-delay: calc(var(--i, 0) * 90ms);
+}
+.revela-on [data-revela].is-visto { opacity: 1; transform: none; }
+
+/* ---------- tablet ---------- */
+@media (max-width: 1100px) {
+  .passos { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .bairros, .destaques, .depoimentos { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ---------- celular ---------- */
+@media (max-width: 760px) {
+  .nav__extra { display: none; }
+  .secao__topo, .como__cab { grid-template-columns: 1fr; }
+  .passos { grid-template-columns: 1fr; gap: 22px; }
+  .passo { display: grid; grid-template-columns: 44px 1fr; column-gap: 8px; }
+  .passo__n { grid-row: span 2; padding-top: 6px; }
+  .passo__titulo { margin-top: 0; font-size: 23px; }
+
+  /* bairros em carrossel com encaixe */
+  .bairros {
+    grid-template-columns: none;
+    grid-auto-flow: column;
+    grid-auto-columns: 78%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    margin-inline: calc(-1 * var(--gutter));
+    padding-inline: var(--gutter);
+    scroll-padding-inline: var(--gutter);
+    scrollbar-width: none;
+  }
+  .bairros::-webkit-scrollbar { display: none; }
+  .bairro { scroll-snap-align: start; }
+
+  .busca__campo { padding-left: 20px; }
+  .busca__campo input { font-size: 16px; }
+  .busca__campo .pilula { padding-left: 6px; gap: 0; }
+  .busca__campo .pilula__txt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); }
+
+  .caminhos, .destaques, .depoimentos { grid-template-columns: 1fr; }
+  .depois__lista { flex-direction: column; }
+  .depois__lista li + li::before { display: none; }
+
+  .sobre__grade { grid-template-columns: 1fr; }
+  .sobre__foto { max-width: 420px; }
+  .sobre__dados { grid-template-columns: 1fr; gap: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bairro__midia img, .bairro__provisorio, .bairro__ver svg { transition: none; }
+  .whats { transition: none; }
+}

@@ -2,6 +2,19 @@
 // Só os textos trocam (fade de 200 ms); o nome letra a letra não reanima.
 import { textos, IDIOMAS } from './data/textos.js';
 import { servicos } from './data/servicos.js';
+import { passos } from './data/passos.js';
+import { bairros } from './data/bairros.js';
+import { caminhos, depois } from './data/investir.js';
+import { depoimentos } from './data/depoimentos.js';
+import { destaques } from './data/destaques.js';
+
+// conjuntos de dados bilíngues: cada item tem { pt: {...}, en: {...} }
+const DADOS = { servicos, passos, bairros, caminhos, depois, depoimentos, destaques };
+// d('bairros.0.nome') -> texto no idioma
+export const d = (chave, lang = atual) => {
+  const [conj, i, campo] = chave.split('.');
+  return DADOS[conj]?.[i]?.[lang]?.[campo] ?? '';
+};
 
 const CHAVE = 'pl-idioma';
 let atual = 'pt';
@@ -36,10 +49,8 @@ function preencher(lang) {
   document.querySelectorAll('[data-t]').forEach((el) => { el.textContent = t(el.dataset.t, lang); });
   document.querySelectorAll('[data-t-alt]').forEach((el) => { el.alt = t(el.dataset.tAlt, lang); });
   document.querySelectorAll('[data-t-aria]').forEach((el) => { el.setAttribute('aria-label', t(el.dataset.tAria, lang)); });
-  document.querySelectorAll('[data-serv]').forEach((el) => {
-    const [i, campo] = el.dataset.serv.split(':').map(Number);
-    el.textContent = servicos[i][lang][campo];
-  });
+  document.querySelectorAll('[data-t-ph]').forEach((el) => { el.placeholder = t(el.dataset.tPh, lang); });
+  document.querySelectorAll('[data-d]').forEach((el) => { el.textContent = d(el.dataset.d, lang); });
   document.querySelectorAll('[data-lang]').forEach((b) => {
     b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
   });

@@ -82,3 +82,114 @@ export const textos = {
 };
 
 export const IDIOMAS = ['pt', 'en'];
+
+// ---------- seções do site completo ----------
+Object.assign(textos.pt, {
+  navBairros: 'Bairros',
+  navSobre: 'Sobre',
+  passosIntro: 'Cinco passos, comigo do lado em cada um, inclusive se você ainda está no Brasil.',
+
+  bairrosRotulo: '[ bairros ]',
+  bairrosTitulo1: 'Onde morar',
+  bairrosTitulo2: 'na Flórida Central.',
+  bairrosIntro: 'Cada bairro tem seu ritmo, sua escola e seu HOA. Escolha um e veja as casas.',
+  bairroVer: 'Ver casas',
+  fotoEmBreve: 'foto em breve',
+
+  imoveisRotulo: '[ imóveis ]',
+  imoveisTitulo1: 'Casas à venda',
+  imoveisTitulo2: 'e para alugar.',
+  buscaComprar: 'Comprar',
+  buscaAlugar: 'Alugar',
+  buscaRotulo: 'O que você procura',
+  buscaPlaceholder: 'Cidade, bairro, CEP ou nº do MLS',
+  buscaBotao: 'Buscar',
+  buscaAtalhos: 'Atalhos',
+  atalhoPiscina: 'Com piscina',
+  atalhoTemporada: 'Casa de temporada',
+  atalhoPlanta: 'Na planta',
+  atalhoAte400: 'Até $400 mil',
+  buscaNotaWhats: 'Sua busca chega direto no meu WhatsApp e eu respondo com as casas que batem.',
+  buscaMsgComprar: 'Olá, Poliana! Quero comprar:',
+  buscaMsgAlugar: 'Olá, Poliana! Quero alugar:',
+
+  investirRotulo: '[ investir ]',
+  investirTitulo1: 'Três jeitos de investir',
+  investirTitulo2: 'em Orlando.',
+  investirIntro: 'O imóvel certo depende do que você quer dele: renda todo mês, temporada ou valorização.',
+  depoisTitulo: 'Depois do closing',
+
+  sobreRotulo: '[ sobre ]',
+  sobreSub: 'BROKER ASSOCIATE · WRA BUSINESS & REAL ESTATE',
+  sobreP1: 'Sou Poliana Landim, Broker Associate na WRA Business & Real Estate, em Orlando. Atendo brasileiros e americanos que querem comprar, vender ou investir em casas na Flórida Central, em português e em inglês.',
+  sobreP2: '[ Sua história aqui: de onde você veio, quando chegou à Flórida e por que virou corretora. Me mande em tópicos que eu escrevo. ]',
+  sobreIdiomas: 'Idiomas',
+  sobreIdiomasValor: 'Português · English',
+  sobreLigar: 'Ligar',
+  sobreEscrever: 'Escrever',
+  sobreFotoEmBreve: 'sua foto aqui',
+
+  depoimentosRotulo: '[ clientes ]',
+  depoimentosTitulo: 'Quem já tem as chaves.',
+
+  contatoSecaoRotulo: '[ contato ]',
+  contatoTitulo1: 'Sua casa na Flórida',
+  contatoTitulo2: 'começa numa conversa.',
+  rodapeNav: 'Rodapé',
+  whatsFlutuante: 'Falar no WhatsApp',
+});
+
+Object.assign(textos.en, {
+  navBairros: 'Areas',
+  navSobre: 'About',
+  passosIntro: "Five steps, with me at your side in each one, even if you're still in Brazil.",
+
+  bairrosRotulo: '[ areas ]',
+  bairrosTitulo1: 'Where to live',
+  bairrosTitulo2: 'in Central Florida.',
+  bairrosIntro: 'Every area has its own pace, schools and HOA. Pick one and see the homes.',
+  bairroVer: 'See homes',
+  fotoEmBreve: 'photo coming soon',
+
+  imoveisRotulo: '[ homes ]',
+  imoveisTitulo1: 'Homes for sale',
+  imoveisTitulo2: 'and for rent.',
+  buscaComprar: 'Buy',
+  buscaAlugar: 'Rent',
+  buscaRotulo: "What you're looking for",
+  buscaPlaceholder: 'City, area, ZIP or MLS #',
+  buscaBotao: 'Search',
+  buscaAtalhos: 'Shortcuts',
+  atalhoPiscina: 'Pool home',
+  atalhoTemporada: 'Vacation home',
+  atalhoPlanta: 'New construction',
+  atalhoAte400: 'Under $400k',
+  buscaNotaWhats: "Your search comes straight to my WhatsApp and I'll reply with the homes that fit.",
+  buscaMsgComprar: "Hi Poliana! I'd like to buy:",
+  buscaMsgAlugar: "Hi Poliana! I'd like to rent:",
+
+  investirRotulo: '[ invest ]',
+  investirTitulo1: 'Three ways to invest',
+  investirTitulo2: 'in Orlando.',
+  investirIntro: 'The right home depends on what you want from it: monthly income, vacation rentals or appreciation.',
+  depoisTitulo: 'After closing',
+
+  sobreRotulo: '[ about ]',
+  sobreSub: 'BROKER ASSOCIATE · WRA BUSINESS & REAL ESTATE',
+  sobreP1: "I'm Poliana Landim, Broker Associate at WRA Business & Real Estate in Orlando. I help Brazilian and American clients buy, sell and invest in homes across Central Florida, in Portuguese and in English.",
+  sobreP2: '[ Your story here: where you came from, when you arrived in Florida and why you became a Realtor. ]',
+  sobreIdiomas: 'Languages',
+  sobreIdiomasValor: 'Português · English',
+  sobreLigar: 'Call',
+  sobreEscrever: 'Write',
+  sobreFotoEmBreve: 'your photo here',
+
+  depoimentosRotulo: '[ clients ]',
+  depoimentosTitulo: 'People who already have the keys.',
+
+  contatoSecaoRotulo: '[ contact ]',
+  contatoTitulo1: 'Your Florida home',
+  contatoTitulo2: 'starts with a conversation.',
+  rodapeNav: 'Footer',
+  whatsFlutuante: 'Chat on WhatsApp',
+});

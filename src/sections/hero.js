@@ -97,7 +97,7 @@ export function hero() {
       </h1>
       <div class="hero__lado">
         <p class="hero__texto">${linha('linha1')}${linha('linha2')}${linha('linha3')}</p>
-        <a class="pilula" href="#fecho"><span class="pilula__txt" data-t="cta">${t('cta')}</span><span class="pilula__circ">${setaSVG}</span></a>
+        <a class="pilula" href="#contato"><span class="pilula__txt" data-t="cta">${t('cta')}</span><span class="pilula__circ">${setaSVG}</span></a>
       </div>
     </div>
 

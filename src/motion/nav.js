@@ -3,8 +3,9 @@
 
 export function iniciarNav({ reduz }) {
   const nav = document.getElementById('nav');
-  const fecho = document.getElementById('fecho');
+  const fecho = document.getElementById('como');
   const raiz = document.documentElement;
+  const whats = document.querySelector('.whats');
   let ultimo = scrollY;
   let pendente = false;
 
@@ -25,6 +26,7 @@ export function iniciarNav({ reduz }) {
     const degrade = reduz ? 0 : innerHeight * 0.45;
     const topoCheio = fecho.getBoundingClientRect().top + degrade * 0.6;
     nav.classList.toggle('is-cheia', topoCheio < nav.offsetTop + nav.offsetHeight);
+    whats?.classList.toggle('is-visivel', y > innerHeight * 1.4);
   }
   addEventListener('scroll', () => {
     if (!pendente) { pendente = true; requestAnimationFrame(atualizar); }

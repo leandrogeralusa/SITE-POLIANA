@@ -1,4 +1,4 @@
-# Poliana Landim — site (hero + fechamento)
+# Poliana Landim — site
 
 Hero bilíngue (PT padrão, EN alternativo): uma casa da Flórida Central numa ilha flutuando no céu da manhã,
 nuvens em camadas, nome gigante embaixo. Vite sem framework, HTML/CSS/JS puros.
@@ -20,6 +20,20 @@ npm run preview  # serve dist/ em http://localhost:5191
 - `src/data/contato.js`: WhatsApp e e-mail são placeholders.
 - `src/data/servicos.js`: confira cada valor e apague o que não é oferecido.
 - Rodapé: confirme com o broker o texto exato exigido na Flórida (nome da corretora já aparece).
+- `src/data/textos.js` → `sobreP2`: placeholder entre colchetes para a história da Poliana.
+- `src/data/contato.js` → `foto.poliana` (retrato 4:5 em `public/img/`) e `idx.url` (link de busca do IDX).
+- `src/data/bairros.js` → `foto` de cada bairro (4:5, só fotos com licença). Sem foto = degradê provisório.
+- `src/data/passos.js`, `investir.js`: confira cada texto.
+- `src/data/depoimentos.js` e `destaques.js`: vazios de propósito. Só depoimentos e imóveis REAIS;
+  com a lista vazia a seção/grade não aparece.
+
+## Seções (ordem na página)
+hero (`#hero`) → como funciona (`#como`, sobe 45svh sobre o hero, classe `.fecho`) → bairros (`#bairros`)
+→ imóveis com busca (`#imoveis`) → investir (`#investir`) → sobre, fundo café (`#sobre`)
+→ depoimentos (`#depoimentos`, só com dados) → contato (`#contato`) → rodapé café + WhatsApp flutuante.
+Textos de lista ficam em `src/data/*.js` com `{ pt, en }` e são ligados por `data-d="conjunto.i.campo"`.
+Busca: com `idx.url` vai para o IDX (`?q=&tipo=`); sem, abre o WhatsApp com a mensagem pronta.
+Clicar num bairro ou num atalho preenche a busca. `[data-revela]` aparece ao rolar (exceto movimento reduzido).
 
 ## Estrutura
 - `index.html` — head com SEO (title, description, OG, hreflang pt-BR/en-US) e o script que põe
@@ -29,11 +43,12 @@ npm run preview  # serve dist/ em http://localhost:5191
   Troca `<html lang>`, `<title>`, meta description/OG, todo `[data-t]`, `[data-t-alt]`, `[data-t-aria]`,
   `[data-serv]`, com fade de 200 ms. O nome letra a letra não é tocado.
 - `src/data/` — `textos.js` (PT/EN), `nuvens.js` (layouts), `servicos.js`, `contato.js`.
-- `src/sections/` — `nav.js`, `hero.js`, `fecho.js` (uma seção por arquivo, devolvem HTML).
+- `src/sections/` — uma seção por arquivo (devolvem HTML): `nav`, `hero`, `como`, `bairros`, `imoveis`,
+  `investir`, `sobre`, `depoimentos`, `contato` (+ `rodape`), e `comum.js` (cabeçalho de seção, ícones).
 - `src/motion/` — `nuvens.js` (duração/atraso da deriva), `palco.js` (cursor + saída, por quadro),
   `entrada.js` (GSAP), `hud.js` (relógios via `Intl`), `nav.js` (some/volta, fica café no fechamento),
-  `grao.js` (ruído de 180 px em canvas).
-- `src/styles/` — `tokens.css` (cores, fontes, tamanhos), `base.css` (pílula, grão), `nav.css`, `hero.css`, `fecho.css`.
+  `grao.js` (ruído de 180 px em canvas), `revelar.js` (aparecer ao rolar), `busca.js` (busca de imóveis).
+- `src/styles/` — `tokens.css` (cores, fontes, tamanhos), `base.css` (pílula, grão), `nav.css`, `hero.css`, `fecho.css`, `secoes.css`.
 
 ## Regra de ouro
 Nenhuma camada ou fundo termina numa linha reta visível. Toda ponta é degradê (`mask-image`/gradiente)

@@ -6,11 +6,20 @@ import './styles/base.css';
 import './styles/nav.css';
 import './styles/hero.css';
 import './styles/fecho.css';
+import './styles/secoes.css';
 
 import { idiomaInicial, fixarIdioma, iniciarIdioma } from './i18n.js';
 import { nav } from './sections/nav.js';
 import { hero } from './sections/hero.js';
-import { fecho } from './sections/fecho.js';
+import { como } from './sections/como.js';
+import { secaoBairros } from './sections/bairros.js';
+import { secaoImoveis } from './sections/imoveis.js';
+import { secaoInvestir } from './sections/investir.js';
+import { secaoSobre } from './sections/sobre.js';
+import { secaoDepoimentos } from './sections/depoimentos.js';
+import { secaoContato, rodape } from './sections/contato.js';
+import { iniciarRevelar } from './motion/revelar.js';
+import { iniciarBusca } from './motion/busca.js';
 import { iniciarNuvens } from './motion/nuvens.js';
 import { iniciarPalco } from './motion/palco.js';
 import { entrada } from './motion/entrada.js';
@@ -23,7 +32,7 @@ const reduz = matchMedia('(prefers-reduced-motion: reduce)').matches;
 // o HTML já sai no idioma certo (?lang=en, localStorage ou português)
 const lang = idiomaInicial();
 fixarIdioma(lang);
-document.getElementById('app').innerHTML = `${nav()}<main id="conteudo">${hero()}${fecho()}</main>`;
+document.getElementById('app').innerHTML = `${nav()}<main id="conteudo">${hero()}${como()}${secaoBairros()}${secaoImoveis()}${secaoInvestir()}${secaoSobre()}${secaoDepoimentos()}${secaoContato()}</main>${rodape()}`;
 iniciarIdioma(lang);
 
 const heroEl = document.getElementById('hero');
@@ -35,3 +44,5 @@ iniciarGrao();
 iniciarNav({ reduz });
 if (!reduz) iniciarPalco(heroEl);
 entrada(palco, { reduz });
+iniciarRevelar({ reduz });
+iniciarBusca();
