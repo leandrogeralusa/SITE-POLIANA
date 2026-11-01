@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Poliana Landim — Corretora em Orlando e na Flórida Central</title>
+    <meta name="description" content="Poliana Landim, Broker Associate na WRA Business &amp; Real Estate. Casas em Orlando, Clermont e Winter Garden para morar, alugar ou investir. Do primeiro tour ao closing, em português." />
+    <meta name="theme-color" content="#4a86bd" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+    <link rel="canonical" href="%VITE_SITE_URL%/" />
+    <link rel="alternate" hreflang="pt-BR" href="%VITE_SITE_URL%/" />
+    <link rel="alternate" hreflang="en-US" href="%VITE_SITE_URL%/?lang=en" />
+    <link rel="alternate" hreflang="x-default" href="%VITE_SITE_URL%/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Poliana Landim" />
+    <meta property="og:url" content="%VITE_SITE_URL%/" />
+    <meta property="og:title" content="Poliana Landim — Corretora em Orlando e na Flórida Central" />
+    <meta property="og:description" content="Poliana Landim, Broker Associate na WRA Business &amp; Real Estate. Casas em Orlando, Clermont e Winter Garden para morar, alugar ou investir. Do primeiro tour ao closing, em português." />
+    <meta property="og:image" content="%VITE_SITE_URL%/img/og.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:locale:alternate" content="en_US" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="preload" href="/img/ilha.webp" as="image" type="image/webp" fetchpriority="high" />
+    <style>
+      /* antes do JS: fundo de névoa creme, sem flash */
+      html, body { background: #f2e8da; }
+      html.pronto, html.pronto body { background: #f7f3ec; }
+      @media (prefers-reduced-motion: no-preference) { html { scroll-behavior: smooth; } }
+    </style>
+    <script>
+      // estado de "antes da entrada" só quando há movimento; trava de segurança de 6 s
+      (function () {
+        var r = document.documentElement;
+        r.classList.add('pronto');
+        if (!matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          r.classList.add('pre-entrada');
+          setTimeout(function () { r.classList.remove('pre-entrada'); }, 6000);
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <noscript>
+      <p style="padding:24px;font-family:system-ui;color:#4a2e23">Poliana Landim — Broker Associate · WRA Business &amp; Real Estate · Orlando, FL. Equal Housing Opportunity.</p>
+    </noscript>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

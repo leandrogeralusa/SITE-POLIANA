@@ -1,0 +1,60 @@
+/* Todas as cores, fontes e tamanhos do site. */
+:root {
+  /* céu da manhã da Flórida, de cima para o horizonte */
+  --ceu-1: #2f6fa8;
+  --ceu-2: #4a86bd;
+  --ceu-3: #86b0d4;
+  --ceu-4: #c9d3d6;
+  --ceu-5: #e8dccb;
+  --nevoa: #f2e8da;
+  --nevoa-base: #ead9c6;
+  --nevoa-base-0: rgba(234, 217, 198, 0);
+
+  /* marca */
+  --off: #f7f3ec;
+  --off-0: rgba(247, 243, 236, 0);
+  --champ: #c4aa8f;
+  --dourado: #b8963e;
+  --terra: #a85d3e;
+  --cafe: #4a2e23;
+  --cafe-rgb: 74, 46, 35;
+
+  /* fontes */
+  --f-nome: 'Fraunces Variable', 'Fraunces', Georgia, serif;
+  --f-texto: 'Archivo Variable', 'Archivo', system-ui, sans-serif;
+  --f-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --nome-eixos: 'opsz' 144, 'SOFT' 50;
+  --texto-eixos: 'wdth' 104;
+
+  /* tamanhos */
+  --gutter: clamp(20px, 3.6vw, 56px);
+  --nome-size: min(16.4vw, 30svh);
+  --hud-size: 12.5px;
+  --sub-size: 12px;
+  --dica-size: 11.5px;
+  --para-size: 20px;
+  --nav-size: 14px;
+  --nav-top: 14px;
+  --raio-nav: 18px;
+
+  /* ilha */
+  --ilha-x: 51.5%;
+  --ilha-y: 40.5%;
+  --ilha-w: min(62vw, 96svh);
+
+  /* sombras de texto */
+  --sombra-texto: 0 1px 2px rgba(var(--cafe-rgb), 0.5), 0 1px 12px rgba(var(--cafe-rgb), 0.45), 0 0 32px rgba(var(--cafe-rgb), 0.3);
+  --sombra-hud: 0 1px 2px rgba(var(--cafe-rgb), 0.4), 0 0 12px rgba(var(--cafe-rgb), 0.25);
+}
+
+@media (max-width: 760px) {
+  :root {
+    --gutter: 22px;
+    --nome-size: 27vw;
+    --hud-size: 11px;
+    --para-size: 16px;
+    --ilha-x: 50%;
+    --ilha-y: 32%;
+    --ilha-w: 98vw;
+  }
+}

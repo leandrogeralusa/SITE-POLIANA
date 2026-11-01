@@ -1,0 +1,80 @@
+/* ================= NAV ================= */
+.nav {
+  position: fixed;
+  z-index: 50;
+  top: var(--nav-top);
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 10px 12px 10px 20px;
+  border-radius: var(--raio-nav);
+  background: rgba(var(--cafe-rgb), 0.4);
+  -webkit-backdrop-filter: blur(14px);
+  backdrop-filter: blur(14px);
+  color: var(--off);
+  font-size: var(--nav-size);
+  line-height: 1;
+  transform: translate(-50%, 0);
+  transition: transform 0.45s cubic-bezier(0.3, 0.7, 0.2, 1), background-color 0.35s;
+}
+.nav.is-escondida:not(:focus-within) { transform: translate(-50%, calc(-100% - var(--nav-top) - 8px)); }
+.nav.is-cheia { background: var(--cafe); }
+
+.nav__links { display: flex; gap: 22px; }
+.nav__links a {
+  display: block;
+  padding: 6px 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  opacity: 0.92;
+  transition: color 0.2s, opacity 0.2s;
+}
+.nav__links a:hover { opacity: 1; color: #f2c7a9; }
+
+.nav__idioma {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding-left: 16px;
+  border-left: 1px solid var(--champ);
+  font-family: var(--f-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.04em;
+}
+.nav__idioma button {
+  padding: 6px 4px;
+  font-weight: 400;
+  opacity: 0.66;
+  transition: opacity 0.2s;
+}
+.nav__idioma button[aria-pressed='true'] { font-weight: 700; opacity: 1; }
+.nav__idioma button:hover { opacity: 1; }
+.nav__barra { color: var(--champ); }
+
+@media (max-width: 760px) {
+  .nav {
+    left: 16px;
+    right: 16px;
+    transform: none;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+    padding: 8px 14px 6px;
+  }
+  .nav.is-escondida:not(:focus-within) { transform: translateY(calc(-100% - var(--nav-top) - 8px)); }
+  .nav__links { justify-content: space-between; gap: 8px; }
+  .nav__idioma {
+    justify-self: end;
+    border-left: 0;
+    border-top: 1px solid rgba(196, 170, 143, 0.55);
+    padding-left: 0;
+    padding-top: 2px;
+    width: 100%;
+    justify-content: flex-end;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nav { transition: background-color 0.2s; }
+}

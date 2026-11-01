@@ -1,0 +1,83 @@
+/* ================= FECHAMENTO =================
+   Sobe 45svh por cima do fim do hero, com um degradê de 45svh na borda de cima. */
+.fecho {
+  position: relative;
+  z-index: 3;
+  margin-top: -45svh;
+  padding: 45svh var(--gutter) 0;
+  background: linear-gradient(to bottom, var(--off-0) 0, rgba(247, 243, 236, 0.7) 22svh, var(--off) 45svh);
+  color: var(--cafe);
+}
+.fecho:focus { outline: none; }
+.fecho__in { padding: 56px 0 72px; }
+
+.fecho__titulo {
+  margin-top: 22px;
+  font-family: var(--f-nome);
+  font-variation-settings: var(--nome-eixos);
+  font-weight: 420;
+  font-size: clamp(2rem, 4.4vw, 4.6rem);
+  line-height: 1.02;
+  letter-spacing: -0.035em;
+}
+
+.dados {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  margin: 64px 0 56px;
+  border-top: 1px solid var(--champ);
+  border-bottom: 1px solid var(--champ);
+}
+.dados__item { padding: 18px 18px 22px; border-left: 1px solid var(--champ); }
+.dados__item:first-child { border-left: 0; padding-left: 0; }
+.dados dt {
+  font-family: var(--f-mono);
+  font-size: 11.5px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}
+.dados dd { margin-top: 10px; font-size: 16px; font-weight: 460; line-height: 1.3; }
+
+.fecho__acao { display: flex; align-items: center; flex-wrap: wrap; gap: 18px 26px; }
+.fecho__nota { max-width: 34ch; font-size: 16px; line-height: 1.4; }
+
+.contato { display: flex; flex-wrap: wrap; gap: 14px 40px; margin-top: 48px; }
+.contato li { display: flex; flex-direction: column; gap: 6px; }
+.contato a {
+  font-size: 17px;
+  font-weight: 460;
+  text-decoration: underline;
+  text-decoration-color: var(--champ);
+  text-underline-offset: 4px;
+  transition: color 0.2s;
+}
+.contato a:hover { color: var(--terra); }
+
+.rodape {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 28px;
+  padding: 22px 0 28px;
+  border-top: 1px solid var(--champ);
+  font-family: var(--f-mono);
+  font-size: 12px;
+  letter-spacing: 0.03em;
+}
+.rodape__corretora { font-weight: 700; }
+.rodape__eho { display: inline-flex; align-items: center; gap: 8px; }
+.eho { width: 22px; height: 22px; }
+
+@media (max-width: 760px) {
+  .dados { grid-template-columns: repeat(2, 1fr); }
+  .dados__item { padding: 16px 0 18px 14px; border-top: 1px solid var(--champ); }
+  .dados__item:nth-child(-n + 2) { border-top: 0; }
+  .dados__item:nth-child(odd) { border-left: 0; padding-left: 0; }
+  .dados dd { font-size: 15px; }
+  .fecho__in { padding: 40px 0 56px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fecho { margin-top: 0; padding-top: 0; background: var(--off); }
+}
